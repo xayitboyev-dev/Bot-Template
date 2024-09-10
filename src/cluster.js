@@ -1,7 +1,15 @@
+// configuration of dotenv
+require("dotenv").config({ path: __dirname + "/config/.env" });
+
 const cluster = require("node:cluster");
 const { availableParallelism } = require("node:os");
 
 const numCPUs = availableParallelism();
+
+if (process.env.NODE_ENV === "development") {
+    console.log("You can't run on cluster in development env!");
+    return process.exit(0);
+};
 
 console.log("Primary cluster pid", process.pid);
 
