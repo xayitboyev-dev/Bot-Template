@@ -14,7 +14,14 @@ const bot = require("./core/bot");
 
 // use middlewares
 bot.use(session());
-bot.use(stage.use(checkUser).start(onStart).on("my_chat_member", onBlocked).hears("🔙 Bekor qilish", (ctx) => ctx.scene.enter("admin:main")).command("admin", (ctx) => ctx.scene.enter("admin:main")).middleware());
+bot.use(
+    stage.use(checkUser)
+        .start(onStart)
+        .on("my_chat_member", onBlocked)
+        .hears("🔙 Bekor qilish", (ctx) => ctx.scene.enter("admin:main"))
+        .command("admin", (ctx) => ctx.scene.enter("admin:main"))
+        .middleware()
+);
 
 // run bot
 if (process.env.NODE_ENV === 'production') {

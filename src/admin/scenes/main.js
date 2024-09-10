@@ -17,10 +17,9 @@ scene.hears("👤 Userga xabar", (ctx) => {
 });
 
 scene.hears("📊 Statistika", async (ctx) => {
-    const activeUsers = await User.count({ active: true });
-    const nonActiveUsers = await User.count({ active: false });
+    const results = await Promise.all([User.count({ active: true }), User.count({ active: false })]);
 
-    ctx.replyWithHTML(`📊 Statistika\n\nActive userlar: <b>${activeUsers}</b>\nNonActive userlar: <b>${nonActiveUsers}</b>\nBarchasi: <b>${activeUsers + nonActiveUsers}</b>`);
+    ctx.replyWithHTML(`📊 Statistika\n\nActive userlar: <b>${results[0]}</b>\nNonActive userlar: <b>${results[1]}</b>\nBarchasi: <b>${results[0] + results[1]}</b>`);
 });
 
 scene.hears("🏠 Client", (ctx) => ctx.scene.enter("main"));

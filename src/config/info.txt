@@ -1,6 +1,0 @@
-Create a ".env" file in this directory
-
-
-BOT_TOKEN="12345687:asdfghkj"
-NODE_ENV="development"
-PORT="8080"
