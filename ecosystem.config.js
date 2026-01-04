@@ -1,7 +1,13 @@
 module.exports = {
-    apps: [{
-        script: "./src/index.js",
-        instances: "max",
-        exec_mode: "cluster"
-    }]
-}
+    apps: [
+        {
+            name: 'bot-template',
+            script: 'npm',
+            args: 'start',
+            interpreter: 'none',
+            instances: 1,
+            autorestart: true,
+            max_memory_restart: "300M",
+        }
+    ]
+};

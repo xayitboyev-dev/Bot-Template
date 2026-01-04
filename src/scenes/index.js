@@ -1,13 +1,10 @@
-const { Scenes: { Stage } } = require('telegraf');
+const { Scenes } = require("telegraf");
 
-const stage = new Stage([
-    require("./main"),
-    require("./example"),
-    require("../admin/scenes/main"),
-    require("../admin/scenes/sendMessage"),
-    require("../admin/scenes/sendTo"),
-], {
-    default: "main"
-});
+const stage = new Scenes.Stage([
+    require("./main.scene"),
+    require("./admin/main.scene"),
+    require("./admin/broadcast.scene"),
+    require("./admin/sendTo.scene"),
+]);
 
 module.exports = stage;

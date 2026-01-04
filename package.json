@@ -1,19 +1,27 @@
 {
   "name": "bot-template",
-  "version": "1.0.0",
-  "description": "The template is created by Ozodbek Khayitboyev",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "The source code for creating telegram bot using NodeJs and Telegraf package. The template is created by Ozodbek Khayitboyev",
   "scripts": {
-    "start": "node ./src/index.js",
-    "cluster": "node ./src/cluster.js",
-    "pm2": "pm2 start npm --name bot-template -- start"
+    "start": "node src/index.js"
   },
-  "author": "Ozodbek Khayitboyev",
+  "homepage": "https://github.com/xayitboyev-dev/bot-template#readme",
+  "bugs": {
+    "url": "https://github.com/xayitboyev-dev/bot-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xayitboyev-dev/bot-template.git"
+  },
   "license": "ISC",
+  "author": "Ozodbek Khayitboyev",
+  "type": "commonjs",
+  "main": "src/index.js",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "mongoose": "^7.6.11",
-    "telegraf": "^4.14.0"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1",
+    "telegraf": "^4.16.3"
   }
 }

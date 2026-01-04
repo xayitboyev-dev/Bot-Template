@@ -1,9 +1,8 @@
 const { Telegraf } = require("telegraf");
-const { commands } = require("../config/config.json");
+const { COMMANDS } = require("../config/config.json");
 
-// bot constructor
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-bot.telegram.setMyCommands(commands);
+bot.telegram.setMyCommands(COMMANDS);
 
 module.exports = bot;
