@@ -5,6 +5,6 @@ const stage = new Scenes.Stage([
     require("./admin/main.scene"),
     require("./admin/broadcast.scene"),
     require("./admin/sendTo.scene"),
-]);
+], { default: "main" });
 
 module.exports = stage;

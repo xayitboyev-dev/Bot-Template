@@ -1,5 +1,3 @@
-const { START } = require("../constants/messages.constant");
-const { main } = require("../keyboards/button.keyboard");
 const userService = require("../services/user.service");
 
 module.exports = (bot) => {
@@ -7,7 +5,7 @@ module.exports = (bot) => {
     try {
       await userService.getOrCreate(ctx.from);
 
-      ctx.replyWithHTML(START, main);
+      ctx.scene.enter("main");
     } catch (error) {
       console.error("Error in start handler:", error.message);
     };

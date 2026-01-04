@@ -3,18 +3,15 @@ const session = require("./utils/session.util");
 const stage = require("./scenes");
 
 bot.use(session());
+bot.use(stage.middleware());
 
 // middlewares
 require("./middlewares/auth.middleware")(bot);
 
-// handlers outside stage
-require("./handlers/start.handler")(bot);
-require("./handlers/onBlocked.handler")(bot);
-
-// scenes stage
-bot.use(stage.middleware());
-
 // handlers inside stage
+require("./handlers/start.handler")(bot);
+require("./handlers/cancel.handler")(bot);
+require("./handlers/onBlocked.handler")(bot);
 require("./handlers/admin.handler")(bot);
 
 // unknown handler - must be the last one
